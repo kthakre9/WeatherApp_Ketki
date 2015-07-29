@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Weather Check-Ketki Thakre</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+
+        <!-- Header -->
+        <header id="top" class="header">
+            <div class="text-vertical-center">
+                <h1>Weather Check</h1>
+
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+              
+                            <h4 class="modal-title">Search Weather</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form role="form">
+                                <div class="form-group preference">
+                                    <label >Preference for Search</label>
+                                    <label class="radio-inline"><input class="Degree" type="radio" name="pref" value="cityname">City Name</label>
+                                    <label class="radio-inline"><input class="Fahrenheit" type="radio" name="pref" value="zipcode">Zip-Code</label>                           
+                                </div>
+                                <div class="form-group citynamefield">
+                                    <label for="cname">City Name</label>
+                                    <input type="text" class="form-control" id="cname">
+                                </div>
+                                <div class="form-group zipcodefield">
+                                    <label for="zipcode">Zip-code</label>
+                                    <input type="text" class="form-control" id="zipcode">
+                                </div>
+
+                                <div class="form-group">
+                                    <label >Format:</label>
+                                    <label class="radio-inline"><input class="Kelvin" type="radio" name="optradio" value="Kelvin" checked>Kelvin</label>
+                                    <label class="radio-inline"><input class="Degree" type="radio" name="optradio" value="Celsius">Celsius</label>
+                                    <label class="radio-inline"><input class="Fahrenheit" type="radio" name="optradio" value="Fahrenheit">Fahrenheit</label> 
+
+                                </div>
+                                <div id="weatherInfo" class="form-group">
+                                    <label>Weather Information</label><br><span id="weatherMain"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><img/></span><br>
+                                    <label>Temperature Information</label><br><span id="weatherTempMax"></span><span id="weatherTempMin"></span><br>
+                                    <label>Wind Information</label><br><span id="windSpeed"></span><span id="windDegree"></span>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a id="getInfo"  class="btn btn-default btn-xl">Submit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/weatherApp.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="js/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+
+        <script>
+            $(function () {
+                var availableTags = [
+                    "Boston",
+                    "Chicago",
+                    "Los angeles",
+                    "New york",
+                    "San francisco",
+                    "Raleigh"
+                ];
+                $("#cname").autocomplete({
+                    source: availableTags
+                });
+            });
+
+        </script>
+
+    </body>
+
+</html>
